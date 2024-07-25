@@ -83,9 +83,7 @@ class Cart {
 }
 
 const cart = new Cart("cart-oop");
-const buisnessCart = new Cart("cart-business");
+const businessCart = new Cart("cart-business");
 
 console.log(cart);
-console.log(buisnessCart);
-
-console.log(cart instanceof Cart);
+console.log(businessCart);
