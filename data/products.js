@@ -93,7 +93,10 @@ export function loadProductsFetch() {
         return new Product(productDetails);
       });
 
-      console.log("products loaded");
+      console.log("load products");
+    })
+    .catch((error) => {
+      console.log(error);
     });
   return promise;
 }
@@ -114,6 +117,11 @@ export function loadProducts(fun) {
     console.log("products loaded");
     fun();
   });
+
+  xhr.addEventListener("error", (error) => {
+    console.log(`error loading products. please try again later`);
+  });
+
   xhr.open("GET", "https://supersimplebackend.dev/products");
   xhr.send();
 }
